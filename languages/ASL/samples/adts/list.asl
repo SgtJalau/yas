@@ -32,7 +32,7 @@ equations
   length(cons(e, l)) = succ(length(l))
   append(nil, l) = l
   append(cons(e, l1), l2) = cons(e, append(l1, l2))
-  cons(e, l) = if greater(head(l), e) then cons'(e, l) else cons(head(l), tail(l))
+  cons(e, l) = if isNil(l) or greater(head(l), e) then cons'(e, l) else cons'(head(l), cons(e, tail(l)))
   snoc(l, e) = append(l, cons(e, nil))
   last(l) = if isNil(tail(l)) then head(l) else last(tail(l))
   init(l) = if isNil(tail(l)) then nil else cons(head(l), init(tail(l)))
