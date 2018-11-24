@@ -8,8 +8,10 @@ sorts
   Elem
 constructors
   nil : -> List // Empty list
-  cons : Elem x List -> List // Head element and tail list
+hidden constructors
+  cons' : Elem x List -> List // Head element and tail list
 functions
+  cons : Elem x List -> List // Head element and tail list
   head : List -> Elem? // Head element
   tail : List -> List? // List without head
   isNil : List -> Bool // Test for nil list
